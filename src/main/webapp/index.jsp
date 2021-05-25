@@ -50,14 +50,15 @@ span.psw {
 </style>
 </head>
 <body>
-	<h1>myBook Store</h1>
+	<h1>MVV Gift Shop</h1>
+	<h4>Since 1999</h4>
 	<form action="Login" method="post">
 	  <div class="container" >
 	    <label><b>Email</b></label>
-	    <input type="text" placeholder="Enter Email" name="email" required>
+	    <input type="text" placeholder="Enter Email here" name="email" required>
 	
 	    <label><b>Password</b></label>
-	    <input type="password" placeholder="Enter Password" name="password" required>
+	    <input type="password" placeholder="Enter Password here" name="password" required>
 	        
 	    <button type="submit">Login</button>
 	  </div>

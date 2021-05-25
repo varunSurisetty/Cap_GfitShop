@@ -1,6 +1,0 @@
-/home/cicd/Cap_GiftShop/src/main/java/devops/cap/controllerWithoutDb/UserRegisterController.java
-/home/cicd/Cap_GiftShop/src/main/java/devops/cap/controllerWithoutDb/UserLoginController.java
-/home/cicd/Cap_GiftShop/src/main/java/devops/cap/controllerWithoutDb/UserPasswordController.java
-/home/cicd/Cap_GiftShop/src/main/java/devops/cap/db/UserDb.java
-/home/cicd/Cap_GiftShop/src/main/java/devops/cap/service/UserService.java
-/home/cicd/Cap_GiftShop/src/main/java/devops/cap/model/User.java

@@ -1,8 +1,0 @@
-127.0.0.1 - - [25/May/2021:16:47:56 +0530] "GET /Cap_GiftShop/forgotpassword.jsp HTTP/1.1" 200 1578 http-bio-6080-exec-1 1249
-127.0.0.1 - - [25/May/2021:16:47:56 +0530] "GET /favicon.ico HTTP/1.1" 404 - http-bio-6080-exec-2 0
-127.0.0.1 - - [25/May/2021:16:47:56 +0530] "POST /Cap_GiftShop/GetPassword HTTP/1.1" 500 3322 http-bio-6080-exec-3 45
-127.0.0.1 - - [25/May/2021:16:47:57 +0530] "GET /Cap_GiftShop/register.jsp HTTP/1.1" 200 1812 http-bio-6080-exec-4 210
-127.0.0.1 - - [25/May/2021:16:47:57 +0530] "POST /Cap_GiftShop/Register HTTP/1.1" 500 3322 http-bio-6080-exec-5 19
-127.0.0.1 - - [25/May/2021:16:47:58 +0530] "GET /Cap_GiftShop HTTP/1.1" 302 - http-bio-6080-exec-6 0
-127.0.0.1 - - [25/May/2021:16:47:58 +0530] "GET /Cap_GiftShop/ HTTP/1.1" 200 1484 http-bio-6080-exec-7 106
-127.0.0.1 - - [25/May/2021:16:47:58 +0530] "POST /Cap_GiftShop/Login HTTP/1.1" 500 3310 http-bio-6080-exec-8 22
