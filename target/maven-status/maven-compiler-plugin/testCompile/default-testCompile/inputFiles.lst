@@ -1,0 +1,6 @@
+/home/cicd/Cap_GiftShop/src/test/java/devops/cap/controllerWithoutDb/LoginTest.java
+/home/cicd/Cap_GiftShop/src/test/java/devops/cap/service/UserServiceTest.java
+/home/cicd/Cap_GiftShop/src/integration-test/java/devops/cap/LoginFunctionalTest.java
+/home/cicd/Cap_GiftShop/src/test/java/devops/cap/controllerWithoutDb/RegisterTest.java
+/home/cicd/Cap_GiftShop/src/integration-test/java/devops/cap/IntegrationTest.java
+/home/cicd/Cap_GiftShop/src/test/java/devops/cap/controllerWithoutDb/ChangePasswordTest.java

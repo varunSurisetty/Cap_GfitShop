@@ -1,0 +1,6 @@
+devops/cap/model/User.class
+devops/cap/service/UserService.class
+devops/cap/controllerWithoutDb/UserPasswordController.class
+devops/cap/db/UserDb.class
+devops/cap/controllerWithoutDb/UserRegisterController.class
+devops/cap/controllerWithoutDb/UserLoginController.class
