@@ -6,6 +6,7 @@ public class User {
 	String lastName;
 	String password;
 	String email;
+	
 	public String getFirstName() {
 		return firstName;
 	}
