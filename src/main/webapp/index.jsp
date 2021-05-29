@@ -7,6 +7,17 @@
 form {
     border: 3px solid #f1f1f1;
 }
+body {
+background-image: url(welcome.jpg);
+-moz-background-size: cover;
+-webkit-background-size: cover;
+background-size: cover;
+background-position: top center !important;
+background-repeat: no-repeat !important;
+background-attachment: fixed;
+}
+
+
 
 input[type=text], input[type=password] {
     width: 100%;
@@ -32,8 +43,7 @@ button:hover {
 }
 
 .container {
-    padding: 16px;
-}
+    padding: 16px;}
 
 span.psw {
     float: right;
@@ -47,6 +57,7 @@ span.psw {
        float: none;
     }
 }
+
 </style>
 </head>
 <body>
