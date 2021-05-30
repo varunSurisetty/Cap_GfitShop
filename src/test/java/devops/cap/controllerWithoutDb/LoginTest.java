@@ -30,7 +30,7 @@ public class LoginTest extends Mockito{
     @Test
     public void testLoginSuccess() throws Exception {
         when(request.getParameter("email")).thenReturn("a.k@devops.com");
-        when(request.getParameter("password")).thenReturn("1234");
+        when(request.getParameter("password")).thenReturn("cicd");
         when(request.getRequestDispatcher("/success.jsp")).thenReturn(rd);            
         StringWriter stringWriter = new StringWriter();
         PrintWriter writer = new PrintWriter(stringWriter);
