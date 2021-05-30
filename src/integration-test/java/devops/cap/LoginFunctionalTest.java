@@ -27,8 +27,7 @@ public class LoginFunctionalTest {
 
 	@BeforeClass
 	public static void setup() {
-	//	driver = new ChromeDriver();
-		// new FirefoxDriver();
+	
 				FirefoxBinary firefoxBinary = new FirefoxBinary();
         firefoxBinary.addCommandLineOptions("--headless");
         System.setProperty("webdriver.gecko.driver", "/usr/bin/geckodriver");
@@ -49,10 +48,10 @@ public class LoginFunctionalTest {
         WebElement email = driver.findElement(By.name("email"));
         WebElement pass = driver.findElement(By.name("password"));
         WebElement button = driver.findElement(By.xpath("/html/body/form/div/button"));         
-        email.sendKeys("a.p@devops.com");
-        pass.sendKeys("1234");
+        email.sendKeys("m.k@devops.com");
+        pass.sendKeys("cicd");
         button.click();
-        assertTrue(driver.getPageSource().contains(" "));
+        assertTrue(driver.getPageSource().contains("Login successfull..."));
 	}
 	
 	//@Test
@@ -92,11 +91,11 @@ public class LoginFunctionalTest {
         WebElement email = driver.findElement(By.name("email"));
         WebElement pass = driver.findElement(By.name("newpassword"));
         WebElement button = driver.findElement(By.xpath("/html/body/form/div/button"));      
-        pass.sendKeys("1234");
-        confirmpass.sendKeys("1234");
-        email.sendKeys("a.p@devops.com");
+        pass.sendKeys("cicd1");
+        confirmpass.sendKeys("cicd1");
+        email.sendKeys("s.v@devops.com");
         button.click();
-        assertTrue(driver.getPageSource().contains(" "));
+        assertTrue(driver.getPageSource().contains("password updated"));
 	}
 }
 
