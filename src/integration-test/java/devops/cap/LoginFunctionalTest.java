@@ -1,4 +1,5 @@
 package devops.cap;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,11 +10,13 @@ import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+
 import devops.cap.IntegrationTest;
 import org.junit.*;
 import static org.junit.Assert.*;
 import java.io.File;
 import org.junit.experimental.categories.Category;
+
 @Category(IntegrationTest.class)
 public class LoginFunctionalTest {
 	static WebDriver driver;
@@ -30,6 +33,7 @@ public class LoginFunctionalTest {
 	public static void cleanUp() {
 		driver.quit();
 	}
+	
 	@Test
 	public void loginSuccess() {
         driver.get("http://localhost:6080/Cap_GiftShop");
@@ -41,6 +45,7 @@ public class LoginFunctionalTest {
         button.click();
         assertTrue(driver.getPageSource().contains("Logged in successfully..."));
 	}
+	
 	@Test
 	public void loginFail() {
         driver.get("http://localhost:6080/Cap_GiftShop");
@@ -52,9 +57,10 @@ public class LoginFunctionalTest {
         button.click();
         assertTrue(driver.getPageSource().contains("Invalid username or password,"));
 	}
+	
 	@Test
 	public void emptyMailField() {
-	driver.get("http://localhost:6080/Cap_GiftShop");
+	driver.get("http://localhost:6080/Cap_GiftShop/");
         WebElement email = driver.findElement(By.name("email"));
         WebElement pass = driver.findElement(By.name("password"));
         WebElement button = driver.findElement(By.xpath("/html/body/form/div/button"));         
@@ -63,10 +69,9 @@ public class LoginFunctionalTest {
         button.click();
         assertTrue(driver.getPageSource().contains("Please fill all the fields"));
 	}
-	@Test
-	{
+	
 	public void emptyPassField() {
-	driver.get("http://localhost:6080/Cap_GiftShop");
+	driver.get("http://localhost:6080/Cap_GiftShop/");
         WebElement email = driver.findElement(By.name("email"));
         WebElement pass = driver.findElement(By.name("password"));
         WebElement button = driver.findElement(By.xpath("/html/body/form/div/button"));         
@@ -75,7 +80,7 @@ public class LoginFunctionalTest {
         button.click();
         assertTrue(driver.getPageSource().contains("Please fill all the fields"));
 	}
-	}
+	
 	@Test
 	public void registrationSuccess() {
         driver.get("http://localhost:6080/Cap_GiftShop/register.jsp");
@@ -93,6 +98,7 @@ public class LoginFunctionalTest {
         button.click();
         assertTrue(driver.getPageSource().contains(" "));
 	}
+	
 	@Test
 	public void registrationFail() {
         driver.get("http://localhost:6080/Cap_GiftShop/register.jsp");
@@ -108,8 +114,9 @@ public class LoginFunctionalTest {
         confirmpass.sendKeys("");
         email.sendKeys("");
         button.click();
-        assertTrue(driver.getPageSource().contains("Registration fail"));
-	}	
+        assertTrue(driver.getPageSource().contains(" "));
+	}
+		
 	@Test
 	public void forgotPasswordSuccess() {
         driver.get("http://localhost:6080/Cap_GiftShop/forgotpassword.jsp");      
