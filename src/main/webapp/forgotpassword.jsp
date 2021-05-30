@@ -65,13 +65,13 @@ span.psw {
 	<form action="GetPassword" method="post">
 	  <div class="container">
 	    <label><b>Email</b></label>
-	    <input type="text" placeholder="Enter Email" name="email" required>
+	    <input type="text" placeholder="Enter Email" name="email">
 	
 	    <label><b>New Password</b></label>
-	    <input type="password" placeholder="Enter Password" name="newpassword" required>
+	    <input type="password" placeholder="Enter Password" name="newpassword">
 	    
 	    <label><b>Confirm Password</b></label>
-	    <input type="password" placeholder="Enter ConfirmPassword" name="confirmpassword" required>
+	    <input type="password" placeholder="Enter ConfirmPassword" name="confirmpassword">
 	    
 	        
 	    <button type="submit">Submit</button>
