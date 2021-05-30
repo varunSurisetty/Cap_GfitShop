@@ -22,7 +22,7 @@ public class UserService {
 			 
 			 while(it.hasNext()){
 				 Map.Entry u = (Map.Entry)it.next();
-					//System.out.println(u.getKey()+"\t"+u.getValue());
+					System.out.println(u.getKey()+"\t"+u.getValue());
 				 if(u.getKey().equals(signup.getEmail())){
 					 isValidUser=true;
 				 }
@@ -45,7 +45,7 @@ public class UserService {
 					 user.setPassword(user.getPassword());
 					 entry.setValue(user);
 					 isUpdated=true;
-					 //System.out.println(user);
+					 System.out.println(user);
 				 }				
 			}
 			
