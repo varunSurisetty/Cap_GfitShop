@@ -43,7 +43,7 @@ public class LoginFunctionalTest {
 	}
 	@Test
 	public void loginFail() {
-        driver.get("http://localhost:6080/Cap_GiftShop/fail.jsp");
+        driver.get("http://localhost:6080/Cap_GiftShop/Login.jsp");
         WebElement email = driver.findElement(By.name("email"));
         WebElement pass = driver.findElement(By.name("password"));
         WebElement button = driver.findElement(By.xpath("/html/body/form/div/button"));         
