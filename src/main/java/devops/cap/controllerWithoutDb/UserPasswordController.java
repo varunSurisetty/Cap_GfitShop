@@ -33,7 +33,6 @@ public class UserPasswordController extends HttpServlet {
 				User updatePwd = new User("", "", newpass, email);
 
 				if (new UserService().updatePassword(updatePwd)) {
-					System.out.println("successfuly updated");
 
 					RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
 					out.write("password updated");
