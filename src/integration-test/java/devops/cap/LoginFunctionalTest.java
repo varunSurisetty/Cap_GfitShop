@@ -8,40 +8,28 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
-
 import org.openqa.selenium.firefox.FirefoxOptions;
-
 import devops.cap.IntegrationTest;
-
 import org.junit.*;
 import static org.junit.Assert.*;
-
 import java.io.File;
-
 import org.junit.experimental.categories.Category;
-
 @Category(IntegrationTest.class)
 public class LoginFunctionalTest {
-
 	static WebDriver driver;
-
 	@BeforeClass
 	public static void setup() {
-	
 				FirefoxBinary firefoxBinary = new FirefoxBinary();
         firefoxBinary.addCommandLineOptions("--headless");
         System.setProperty("webdriver.gecko.driver", "/usr/bin/geckodriver");
         FirefoxOptions firefoxOptions = new FirefoxOptions();
         firefoxOptions.setBinary(firefoxBinary);
-        
         driver = new FirefoxDriver(firefoxOptions);
 	}
-
 	@AfterClass
 	public static void cleanUp() {
 		driver.quit();
 	}
-
 	@Test
 	public void loginSuccess() {
         driver.get("http://localhost:6080/Cap_GiftShop");
@@ -53,10 +41,9 @@ public class LoginFunctionalTest {
         button.click();
         assertTrue(driver.getPageSource().contains("Logged in successfully..."));
 	}
-	
-	//@Test
+	@Test
 	public void loginFail() {
-        driver.get("http://localhost:6080/Cap_GiftShop");
+        driver.get("http://localhost:6080/Cap_GiftShop/fail.jsp");
         WebElement email = driver.findElement(By.name("email"));
         WebElement pass = driver.findElement(By.name("password"));
         WebElement button = driver.findElement(By.xpath("/html/body/form/div/button"));         
@@ -65,7 +52,6 @@ public class LoginFunctionalTest {
         button.click();
         assertTrue(driver.getPageSource().contains("Invalid username or password, Please try again with valid Credentials."));
 	}
-	
 	@Test
 	public void registrationSuccess() {
         driver.get("http://localhost:6080/Cap_GiftShop/register.jsp");
@@ -82,8 +68,7 @@ public class LoginFunctionalTest {
         email.sendKeys("aa@devops.com");
         button.click();
         assertTrue(driver.getPageSource().contains(" "));
-	}
-	
+	}	
 	@Test
 	public void forgotPasswordSuccess() {
         driver.get("http://localhost:6080/Cap_GiftShop/forgotpassword.jsp");      
@@ -98,5 +83,3 @@ public class LoginFunctionalTest {
         assertTrue(driver.getPageSource().contains(" "));
 	}
 }
-
-
