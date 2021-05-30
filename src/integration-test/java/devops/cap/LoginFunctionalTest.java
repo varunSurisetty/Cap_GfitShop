@@ -53,6 +53,30 @@ public class LoginFunctionalTest {
         assertTrue(driver.getPageSource().contains("Invalid username or password,"));
 	}
 	@Test
+	public void emptyMailField() {
+	driver.get("http://localhost:6080/Cap_GiftShop");
+        WebElement email = driver.findElement(By.name("email"));
+        WebElement pass = driver.findElement(By.name("password"));
+        WebElement button = driver.findElement(By.xpath("/html/body/form/div/button"));         
+        email.sendKeys("");
+        pass.sendKeys("1234566666666");
+        button.click();
+        assertTrue(driver.getPageSource().contains("Please fill all the fields"));
+	}
+	@Test
+	{
+	public void emptyPassField() {
+	driver.get("http://localhost:6080/Cap_GiftShop");
+        WebElement email = driver.findElement(By.name("email"));
+        WebElement pass = driver.findElement(By.name("password"));
+        WebElement button = driver.findElement(By.xpath("/html/body/form/div/button"));         
+        email.sendKeys("");
+        pass.sendKeys("");
+        button.click();
+        assertTrue(driver.getPageSource().contains("Please fill all the fields"));
+	}
+	}
+	@Test
 	public void registrationSuccess() {
         driver.get("http://localhost:6080/Cap_GiftShop/register.jsp");
         WebElement firstname = driver.findElement(By.name("firstname"));
@@ -68,6 +92,23 @@ public class LoginFunctionalTest {
         email.sendKeys("aa@devops.com");
         button.click();
         assertTrue(driver.getPageSource().contains(" "));
+	}
+	@Test
+	public void registrationFail() {
+        driver.get("http://localhost:6080/Cap_GiftShop/register.jsp");
+        WebElement firstname = driver.findElement(By.name("firstname"));
+        WebElement lastname = driver.findElement(By.name("lastname"));
+        WebElement confirmpass = driver.findElement(By.name("confirmpass"));
+        WebElement email = driver.findElement(By.name("email"));
+        WebElement pass = driver.findElement(By.name("pass"));
+        WebElement button = driver.findElement(By.xpath("/html/body/form/div/button"));      
+        firstname.sendKeys("");
+        lastname.sendKeys("");
+        pass.sendKeys("");
+        confirmpass.sendKeys("");
+        email.sendKeys("");
+        button.click();
+        assertTrue(driver.getPageSource().contains("Registration fail"));
 	}	
 	@Test
 	public void forgotPasswordSuccess() {
