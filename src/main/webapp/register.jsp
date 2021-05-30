@@ -65,19 +65,19 @@ span.psw {
 	  <div class="container">
 	    
 		<label><b>First Name</b></label>
-	    <input type="text" placeholder="Enter First Name" name="firstname" required>
+	    <input type="text" placeholder="Enter First Name" name="firstname">
 	    
 	    <label><b>Last Name</b></label>
-	    <input type="text" placeholder="Enter Lastt Name" name="lastname" required>
+	    <input type="text" placeholder="Enter Lastt Name" name="lastname" >
 	    
 	    <label><b>Password</b></label>
-	    <input type="password" placeholder="Enter Password" name="pass" required>
+	    <input type="password" placeholder="Enter Password" name="pass">
 	    
 	    <label><b>Confirm Password</b></label>
-	    <input type="password" placeholder="Enter ConfirmPassword" name="confirmpass" required>
+	    <input type="password" placeholder="Enter ConfirmPassword" name="confirmpass" >
 	    
 	    <label><b>Email</b></label>
-	    <input type="text" placeholder="Enter Email" name="email" required>        
+	    <input type="text" placeholder="Enter Email" name="email">        
 	    <button type="submit">Register</button>
 	  </div>
 </form>
