@@ -26,7 +26,7 @@ public class UserPasswordController extends HttpServlet {
 		String email = request.getParameter("email");
 
 		if (newpass.isEmpty() || confirmpass.isEmpty() || email.isEmpty()) {
-			out.println("<html><body><font color=red>Please fill all the fields</font></body></html>");
+			out.println("<font color=red>Please fill all the fields...");
 		} else {
 			if (newpass.equals(confirmpass)) {
 
