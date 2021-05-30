@@ -66,10 +66,10 @@ span.psw {
 	<form action="Login" method="post">
 	  <div class="container" >
 	    <label><b>Email</b></label>
-	    <input type="text" placeholder="Enter your Email here" name="email" required>
+	    <input type="text" placeholder="Enter your Email here" name="email">
 	
 	    <label><b>Password</b></label>
-	    <input type="password" placeholder="Enter  your Password here" name="password" required>
+	    <input type="password" placeholder="Enter  your Password here" name="password">
 	        
 	    <button type="submit">Login</button>
 	  </div>
