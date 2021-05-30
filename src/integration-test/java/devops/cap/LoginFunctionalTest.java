@@ -43,14 +43,14 @@ public class LoginFunctionalTest {
 	}
 	@Test
 	public void loginFail() {
-        driver.get("http://localhost:6080/Cap_GiftShop/index.jsp");
+        driver.get("http://localhost:6080/Cap_GiftShop");
         WebElement email = driver.findElement(By.name("email"));
         WebElement pass = driver.findElement(By.name("password"));
         WebElement button = driver.findElement(By.xpath("/html/body/form/div/button"));         
         email.sendKeys("a.p@devops.com");
         pass.sendKeys("1234566666666");
         button.click();
-        assertTrue(driver.getPageSource().contains("Invalid username or password, Please try again with valid Credentials."));
+        assertTrue(driver.getPageSource().contains("Invalid username or password,"));
 	}
 	@Test
 	public void registrationSuccess() {
