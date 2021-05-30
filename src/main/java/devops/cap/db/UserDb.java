@@ -16,9 +16,9 @@ public class UserDb {
 	
 	public UserDb(){
 		
-		User u1=new User("A","P","1234","a.p@devops.com");
-		User u2=new User("P","R","abcd","p.r@devops.com");
-		User u3=new User("R","S","pqrs","r.s@devops.com");
+		User u1=new User("surisetty","varun","cicd","s.v@devops.com");
+		User u2=new User("vidhya","sainath","cicd","v.s@devops.com");
+		User u3=new User("meera","kumari","cicd","m.k@devops.com");
 	
 		
 		userProfile.put(u1.getEmail(), u1);
