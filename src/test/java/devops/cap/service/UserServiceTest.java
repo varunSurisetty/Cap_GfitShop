@@ -16,7 +16,7 @@ public class UserServiceTest {
 
 	@Test
 	public void testUpdatePassword() {
-		User u1=new User("anil","kumar","cicd","a.k@devops.com");
+		User u1=new User("","","cicd","a.k@devops.com");
 		assertEquals(true,new UserService().updatePassword(u1));
 	}
 
