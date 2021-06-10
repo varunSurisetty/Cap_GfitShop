@@ -14,4 +14,10 @@ public class CartServiceTest {
 		assertEquals(true,new CartService().isAuthorized(u1));
 	}
 
+	@Test
+	public void testIsnotAutherozied() {
+		Cart u1=new Cart("meera","mee");
+		assertEquals(true,new CartService().isAuthorized(u1));
+	}
+
 }
