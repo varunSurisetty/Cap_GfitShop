@@ -28,7 +28,6 @@ public class UserLoginController extends HttpServlet {
 			  PrintWriter pout= response.getWriter();
 			  pout.write("enter correct credentials");
 			  rd.include(request, response);
-
 			 } 
 			else {
 				
