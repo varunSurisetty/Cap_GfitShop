@@ -28,8 +28,9 @@ public class UserRegisterController extends HttpServlet{
 		 
 
 		  if (fname.isEmpty() || lname.isEmpty() || pass.isEmpty() || confirmpass.isEmpty() || email.isEmpty()) {
-			   RequestDispatcher rd = request.getRequestDispatcher("/register.jsp");
-			   PrintWriter pout= response.getWriter();
+		  PrintWriter pout= response.getWriter();
+			   RequestDispatcher rd = request.getRequestDispatcher("register.jsp");
+			   
 			   pout.println("<font color=red>Please fill all the fields</font>");
 			   rd.include(request, response);
 		  } 
