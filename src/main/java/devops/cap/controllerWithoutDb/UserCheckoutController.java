@@ -21,7 +21,7 @@ public class UserCheckoutController extends HttpServlet {
 		String userNm=request.getParameter("userName");
 		String pass=request.getParameter("password");
 		
-		if (userNm.isEmpty() || pass.isEmpty()) {
+		if (!(userNm.isEmpty() || pass.isEmpty())) {
 			  RequestDispatcher rd = request.getRequestDispatcher("checkout.jsp");
 			 
 			  rd.include(request, response);

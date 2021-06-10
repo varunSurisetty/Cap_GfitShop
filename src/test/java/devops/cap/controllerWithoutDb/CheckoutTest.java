@@ -46,10 +46,28 @@ public class CheckoutTest extends Mockito{
     }
     
  
+ 
  @Test
     public void testLoginFail() throws Exception {
         when(request.getParameter("userName")).thenReturn("test");
         when(request.getParameter("password")).thenReturn("meera");
+        when(request.getRequestDispatcher("/fail.jsp")).thenReturn(rd);            
+        StringWriter stringWriter = new StringWriter();
+        PrintWriter writer = new PrintWriter(stringWriter);
+        when(response.getWriter()).thenReturn(writer);
+        new UserCheckoutController().doPost(request, response);
+     
+        verify(rd).forward(request, response);
+        
+        String result = stringWriter.getBuffer().toString().trim();
+        assertEquals("Login fail...", result);
+      
+    }
+
+ @Test
+    public void testLoginFail() throws Exception {
+        when(request.getParameter("userName")).thenReturn("");
+        when(request.getParameter("password")).thenReturn("");
         when(request.getRequestDispatcher("/fail.jsp")).thenReturn(rd);            
         StringWriter stringWriter = new StringWriter();
         PrintWriter writer = new PrintWriter(stringWriter);
