@@ -22,12 +22,13 @@ public class UserLoginController extends HttpServlet {
 		String pass=request.getParameter("password");
 		
 		if ((email != null && email.isEmpty()) || (pass !=null && pass.isEmpty())) {
-		
-		
+
+			  
 			  RequestDispatcher rd = request.getRequestDispatcher("/empty.jsp");
 			  PrintWriter pout= response.getWriter();
 			  pout.write("enter correct credentials");
 			  rd.include(request, response);
+
 			 } 
 			else {
 				

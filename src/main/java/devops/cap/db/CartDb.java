@@ -9,8 +9,7 @@ import devops.cap.model.Cart;
 
 public class CartDb {
 	
-	private static String[][] users;
-	private static List<Cart>  cartData;
+	
 	
 	public static Map<String, Cart> cartItems=new HashMap<String,Cart>();
 	
