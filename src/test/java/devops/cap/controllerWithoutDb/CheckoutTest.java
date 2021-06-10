@@ -60,12 +60,12 @@ public class CheckoutTest extends Mockito{
         verify(rd).forward(request, response);
         
         String result = stringWriter.getBuffer().toString().trim();
-        assertEquals("Login fail...", result);
+        assertEquals("Invalid username or password, Please try again with valid", result);
       
     }
 
  @Test
-    public void testLoginFail() throws Exception {
+    public void testLoginEmpty() throws Exception {
         when(request.getParameter("userName")).thenReturn("");
         when(request.getParameter("password")).thenReturn("");
         when(request.getRequestDispatcher("/fail.jsp")).thenReturn(rd);            
@@ -77,7 +77,8 @@ public class CheckoutTest extends Mockito{
         verify(rd).forward(request, response);
         
         String result = stringWriter.getBuffer().toString().trim();
-        assertEquals("Login fail...", result);
+
+        assertEquals("Invalid username or password, Please try again with valid", result);
       
     }
 

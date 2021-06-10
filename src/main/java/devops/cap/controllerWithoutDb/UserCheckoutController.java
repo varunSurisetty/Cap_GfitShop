@@ -21,10 +21,12 @@ public class UserCheckoutController extends HttpServlet {
 		String userNm=request.getParameter("userName");
 		String pass=request.getParameter("password");
 		
-		if (!(userNm.isEmpty() || pass.isEmpty())) {
-			  RequestDispatcher rd = request.getRequestDispatcher("checkout.jsp");
-			 
-			  rd.include(request, response);
+		if ((userNm != null && userNm.isEmpty() || pass != null && pass.isEmpty())) {
+				
+			  PrintWriter pout= response.getWriter();
+			  pout.write("Invalid username or password, Please try again with valid ");
+			  RequestDispatcher rd = request.getRequestDispatcher("/fail.jsp");
+			  rd.forward(request, response);
 			 } 
 			else {
 				
@@ -36,15 +38,22 @@ public class UserCheckoutController extends HttpServlet {
                                        RequestDispatcher rd=request.getRequestDispatcher("paypal.jsp");
 
 						rd.forward(request,response);
-						return;
+						return;}
+						else
+						{
+
+							pout.write("Invalid username or password, Please try again with valid ");
+                                       RequestDispatcher rd=request.getRequestDispatcher("/fail.jsp");
+
+						rd.forward(request,response);
+						return ;
+						}
 					}
-					pout.write("Login fail...");
+					
 					 
-					RequestDispatcher rd = request.getRequestDispatcher("/fail.jsp");
-					rd.forward(request,response);
+					
 					
 					
 			  }
 	}
 
-}
