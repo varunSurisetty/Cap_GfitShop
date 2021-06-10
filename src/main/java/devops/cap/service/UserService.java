@@ -22,7 +22,7 @@ public class UserService {
 			 
 			 while(it.hasNext()){
 				 Map.Entry u = (Map.Entry)it.next();
-					//System.out.println(u.getKey()+"\t"+u.getValue());
+					
 				 if(u.getKey().equals(signup.getEmail())){
 					 isValidUser=true;
 				 }
@@ -45,7 +45,7 @@ public class UserService {
 					 user.setPassword(user.getPassword());
 					 entry.setValue(user);
 					 isUpdated=true;
-					 //System.out.println(user);
+					 
 				 }				
 			}
 			
@@ -60,7 +60,7 @@ public class UserService {
 		if(user!=null && user.getEmail()!=null){			
 			userDb.userProfile.put(user.getEmail(), user);
 			isCreated=true;		
-			//System.out.println("Number of records available: "+userDb.userProfile.size());
+			
 		}
 		return isCreated;
 	}
