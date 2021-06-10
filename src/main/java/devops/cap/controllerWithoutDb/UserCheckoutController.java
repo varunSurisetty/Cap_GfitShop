@@ -38,7 +38,7 @@ public class UserCheckoutController extends HttpServlet {
                                        RequestDispatcher rd=request.getRequestDispatcher("paypal.jsp");
 
 						rd.forward(request,response);
-						return;}
+						}
 						else
 						{
 
@@ -46,7 +46,7 @@ public class UserCheckoutController extends HttpServlet {
                                        RequestDispatcher rd=request.getRequestDispatcher("/fail.jsp");
 
 						rd.forward(request,response);
-						return ;
+						
 						}
 					}
 					
