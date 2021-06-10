@@ -24,9 +24,10 @@ public class UserLoginController extends HttpServlet {
 		if ((email != null && email.isEmpty()) || (pass !=null && pass.isEmpty())) {
 
 			  
-			  RequestDispatcher rd = request.getRequestDispatcher("/empty.jsp");
+			  
 			  PrintWriter pout= response.getWriter();
 			  pout.write("enter correct credentials");
+			  RequestDispatcher rd = request.getRequestDispatcher("/empty.jsp");
 			  rd.include(request, response);
 			 } 
 			else {
