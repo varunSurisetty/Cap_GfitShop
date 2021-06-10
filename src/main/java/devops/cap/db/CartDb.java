@@ -12,7 +12,7 @@ public class CartDb {
 	private static String[][] users;
 	private static List<Cart>  cartData;
 	
-	private static Map<String, Cart> cartItems=new HashMap<String,Cart>();
+	public static Map<String, Cart> cartItems=new HashMap<String,Cart>();
 	
 	public CartDb(){
 		
