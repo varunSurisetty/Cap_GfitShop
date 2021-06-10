@@ -49,10 +49,7 @@ public class UserCheckoutController extends HttpServlet {
 						
 						}
 					}
-					
-					 
-					
-					
+						
 					
 			  }
 	}

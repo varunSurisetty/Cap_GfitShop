@@ -9,7 +9,8 @@ import devops.cap.model.User;
 
 public class UserDb {
 	
-	
+	public static String[][] users;
+	public static List<User>  usersData;
 	
 	public static Map<String, User> userProfile=new HashMap<String,User>();
 	
