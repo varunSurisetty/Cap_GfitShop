@@ -28,11 +28,7 @@ public class CartService {
 
 			 }	
 		}
-		else
-		{
-			isValidUser=false;
-		}
-
+		
 		
 		return isValidUser;
 	}
