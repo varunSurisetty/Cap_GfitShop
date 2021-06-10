@@ -32,9 +32,8 @@ public class User {
 	}
 	
 	
-	public  User(){
-		
-	}
+	
+	
 	public User(String firstName, String lastName, String password, String email) {
 		super();
 		this.firstName = firstName;

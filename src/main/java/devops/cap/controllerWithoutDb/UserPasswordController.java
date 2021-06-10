@@ -25,16 +25,13 @@ public class UserPasswordController extends HttpServlet {
 		String confirmpass = request.getParameter("confirmpassword");
 		String email = request.getParameter("email");
 
-		if (newpass.isEmpty() || confirmpass.isEmpty() || email.isEmpty()) {
-			out.println("<font color=red>Please fill all the fields</font>");
-		} else {
+		
 			if (newpass.equals(confirmpass)) {
 
 				User updatePwd = new User("", "", newpass, email);
 
 				if (new UserService().updatePassword(updatePwd)) {
-					System.out.println("successfuly updated");
-
+					
 					RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
 					out.write("password updated");
 					rd.forward(request, response);
@@ -43,8 +40,8 @@ public class UserPasswordController extends HttpServlet {
 			}
 
 			else {
-				out.println("<font color=red>Password and Confirm Password doen't matches</font>");
+				out.println("<font color=red>Password and Confirm Password doesn't matches</font>");
 			}
 		}
 	}
-}
+
