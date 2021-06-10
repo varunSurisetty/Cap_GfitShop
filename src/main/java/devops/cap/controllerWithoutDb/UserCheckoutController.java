@@ -2,10 +2,7 @@ package devops.cap.controllerWithoutDb;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -21,13 +18,12 @@ public class UserCheckoutController extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		response.setContentType("text/html");
-		PrintWriter out = response.getWriter();
 		String userNm=request.getParameter("userName");
 		String pass=request.getParameter("password");
 		
 		if (userNm.isEmpty() || pass.isEmpty()) {
 			  RequestDispatcher rd = request.getRequestDispatcher("checkout.jsp");
-			 // out.println("<font color=red>Please fill all the fields</font>");
+			 
 			  rd.include(request, response);
 			 } 
 			else {

@@ -21,13 +21,12 @@ public class UserLoginController extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		response.setContentType("text/html");
-		PrintWriter out = response.getWriter();
 		String email=request.getParameter("email");
 		String pass=request.getParameter("password");
 		
 		if ((email != null && email.isEmpty()) || (pass!=null && pass.isEmpty())) {
 			  RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
-			 // out.println("<font color=red>Please fill all the fields</font>");
+			 
 			  rd.include(request, response);
 			 } 
 			else {

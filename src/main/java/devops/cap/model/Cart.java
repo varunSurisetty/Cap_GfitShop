@@ -13,9 +13,7 @@ public class Cart {
 	}
 	
 	
-	public  Cart(){
-		
-	}
+	
 	public Cart(String userName, String password) {
 		super();
 		this.userName = userName;
