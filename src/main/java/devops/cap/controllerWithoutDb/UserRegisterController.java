@@ -31,7 +31,7 @@ public class UserRegisterController extends HttpServlet{
 		  PrintWriter pout= response.getWriter();
 			   RequestDispatcher rd = request.getRequestDispatcher("register.jsp");
 			   
-			   pout.println("<font color=red>Please fill all the fields</font>");
+			   pout.println("<font color=red>Please fill all he fields</font>");
 			   rd.include(request, response);
 		  } 
 		  else {
