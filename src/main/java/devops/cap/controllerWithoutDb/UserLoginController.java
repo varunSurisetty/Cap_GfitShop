@@ -2,10 +2,7 @@ package devops.cap.controllerWithoutDb;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -25,8 +22,10 @@ public class UserLoginController extends HttpServlet {
 		String pass=request.getParameter("password");
 		
 		if ((email != null && email.isEmpty()) || (pass!=null && pass.isEmpty())) {
-			  RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
-			 
+		PrintWriter pout= response.getWriter();
+		
+			  RequestDispatcher rd = request.getRequestDispatcher("/index.jsp");
+			  pout.write("<font color=red>go back</font>");
 			  rd.include(request, response);
 			 } 
 			else {

@@ -62,5 +62,21 @@ public class LoginTest extends Mockito{
         assertEquals("Login fail...", result);
       
     }
+@Test
+    public void testLoginIndex() throws Exception {
+        when(request.getParameter("email")).thenReturn(" ");
+        when(request.getParameter("password")).thenReturn(" ");
+        when(request.getRequestDispatcher("/index.jsp")).thenReturn(rd);            
+        StringWriter stringWriter = new StringWriter();
+        PrintWriter writer = new PrintWriter(stringWriter);
+        when(response.getWriter()).thenReturn(writer);
+        new UserLoginController().doPost(request, response);
+     
+        verify(rd).forward(request, response);
+        
+        String result = stringWriter.getBuffer().toString().trim();
+        assertEquals("go back", result);
+      
+    }
 
 }
