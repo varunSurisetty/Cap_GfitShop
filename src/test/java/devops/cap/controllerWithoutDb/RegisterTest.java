@@ -67,6 +67,29 @@ public class RegisterTest extends Mockito{
         
         String result = stringWriter.getBuffer().toString().trim();
         assertEquals("<font color=red>Password and Confirm Password doen't matches</font>", result);
+
+
+    }
+
+    @Test
+    public void testRegistrationFail2() throws Exception {
+        when(request.getParameter("firstname")).thenReturn("");
+        when(request.getParameter("lastname")).thenReturn("");
+        when(request.getParameter("email")).thenReturn("");
+        when(request.getParameter("pass")).thenReturn("");
+        when(request.getParameter("confirmpass")).thenReturn("");
+        when(request.getRequestDispatcher("/register.jsp")).thenReturn(rd);            
+        StringWriter stringWriter = new StringWriter();
+        PrintWriter writer = new PrintWriter(stringWriter);
+        when(response.getWriter()).thenReturn(writer);
+        new UserRegisterController().doPost(request, response);
+     
+        verify(rd).include(request, response);
+        
+        String result = stringWriter.getBuffer().toString().trim();
+        assertEquals("<font color=red>Please fill all he fields</font>", result);
+
+        
     }
  
 }
