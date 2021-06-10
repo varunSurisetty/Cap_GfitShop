@@ -33,15 +33,14 @@ public class UserPasswordController extends HttpServlet {
 				if (new UserService().updatePassword(updatePwd)) {
 					
 					RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
+					PrintWriter pout= response.getWriter();
 					out.write("password updated");
 					rd.forward(request, response);
 				}
 
 			}
 
-			else {
-				out.println("<font color=red>Password and Confirm Password doesn't matches</font>");
-			}
+			
 		}
 	}
 
