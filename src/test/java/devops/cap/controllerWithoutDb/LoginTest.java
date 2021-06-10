@@ -27,16 +27,17 @@ public class LoginTest extends Mockito{
 	  MockitoAnnotations.initMocks(this);
 	 }
 
+
     @Test
     public void testLoginSuccess() throws Exception {
-        when(request.getParameter("email")).thenReturn("s.v@devops.com");
-        when(request.getParameter("password")).thenReturn("cicd");
-        when(request.getRequestDispatcher("/success.jsp")).thenReturn(rd);            
+        when(request.getParameter("email")).thenReturn("a.p@devops.com");
+        when(request.getParameter("password")).thenReturn("1234");
+        when(request.getRequestDispatcher("/home.jsp")).thenReturn(rd);            
         StringWriter stringWriter = new StringWriter();
         PrintWriter writer = new PrintWriter(stringWriter);
         when(response.getWriter()).thenReturn(writer);
         new UserLoginController().doPost(request, response);
-     
+
         verify(rd).forward(request, response);
         
         String result = stringWriter.getBuffer().toString().trim();
@@ -44,10 +45,11 @@ public class LoginTest extends Mockito{
       
     }
     
-    //@Test
+ 
+ @Test
     public void testLoginFail() throws Exception {
-        when(request.getParameter("email")).thenReturn("a.k@devops.com");
-        when(request.getParameter("password")).thenReturn("12345");
+        when(request.getParameter("email")).thenReturn("a@devops.com");
+        when(request.getParameter("password")).thenReturn("1234");
         when(request.getRequestDispatcher("/fail.jsp")).thenReturn(rd);            
         StringWriter stringWriter = new StringWriter();
         PrintWriter writer = new PrintWriter(stringWriter);
@@ -60,4 +62,5 @@ public class LoginTest extends Mockito{
         assertEquals("Login fail...", result);
       
     }
+
 }

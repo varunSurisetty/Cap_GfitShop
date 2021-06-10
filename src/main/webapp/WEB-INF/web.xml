@@ -12,7 +12,7 @@
 
 
 	<servlet>
-		<servlet-name>Login</servlet-name>
+		<servlet-name>Home</servlet-name>
 		<servlet-class>devops.cap.controllerWithoutDb.UserLoginController</servlet-class>
 	</servlet>
 	
@@ -25,15 +25,23 @@
 		<servlet-name>GetPassword</servlet-name>
 		<servlet-class>devops.cap.controllerWithoutDb.UserPasswordController</servlet-class>
 	</servlet>
-
+      <servlet>
+		<servlet-name>Checkout</servlet-name>
+		<servlet-class>devops.cap.controllerWithoutDb.UserCheckoutController</servlet-class>
+	</servlet>
 	<servlet-mapping>
-		<servlet-name>Login</servlet-name>
-		<url-pattern>/Login</url-pattern>
+		<servlet-name>Home</servlet-name>
+		<url-pattern>/Home</url-pattern>
+	</servlet-mapping>
+<servlet-mapping>
+		<servlet-name>Checkout</servlet-name>
+		<url-pattern>/Checkout</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>Register</servlet-name>
 		<url-pattern>/Register</url-pattern>
 	</servlet-mapping>
+	
 	<servlet-mapping>
 		<servlet-name>GetPassword</servlet-name>
 		<url-pattern>/GetPassword</url-pattern>

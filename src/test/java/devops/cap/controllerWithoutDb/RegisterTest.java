@@ -28,6 +28,8 @@ public class RegisterTest extends Mockito{
 	  MockitoAnnotations.initMocks(this);
 	 }
 
+
+  
     @Test
     public void testRegistrationSuccess() throws Exception {
     	when(request.getParameter("firstname")).thenReturn("fname");
@@ -66,4 +68,5 @@ public class RegisterTest extends Mockito{
         String result = stringWriter.getBuffer().toString().trim();
         assertEquals("<font color=red>Password and Confirm Password doen't matches</font>", result);
     }
+ 
 }

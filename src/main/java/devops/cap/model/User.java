@@ -1,5 +1,7 @@
 package devops.cap.model;
+
 public class User {
+	
 	String firstName;
 	String lastName;
 	String password;
@@ -28,11 +30,25 @@ public class User {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	@Override
+	public String toString() {
+		return "User [firstName=" + firstName + ", lastName=" + lastName + ", password=" + password + ", email=" + email
+				+ "]";
+	}
 	
-	public  User(){}
+	public  User(){
+		
+	}
 	public User(String firstName, String lastName, String password, String email) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.password = password;
-		this.email = email;}}
+		this.email = email;
+	}
+	
+	
+	
+	
+
+}
