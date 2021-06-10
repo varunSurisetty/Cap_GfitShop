@@ -81,5 +81,22 @@ public class CheckoutTest extends Mockito{
         assertEquals("Invalid username or password, Please try again with valid", result);
       
     }
+    @Test
+    public void testLoginNull() throws Exception {
+        when(request.getParameter("userName")).thenReturn(null);
+        when(request.getParameter("password")).thenReturn(null);
+        when(request.getRequestDispatcher("/fail.jsp")).thenReturn(rd);            
+        StringWriter stringWriter = new StringWriter();
+        PrintWriter writer = new PrintWriter(stringWriter);
+        when(response.getWriter()).thenReturn(writer);
+        new UserCheckoutController().doPost(request, response);
+     
+        verify(rd).forward(request, response);
+        
+        String result = stringWriter.getBuffer().toString().trim();
+
+        assertEquals("Invalid username or password, Please try again with valid", result);
+      
+    }
 
 }
