@@ -1,45 +1,26 @@
-pipeline 
-{
+pipeline {
     agent any
-      stages 
-      {
-         stage("clean") {
-            try{
-             if ("sh /usr/share/maven/bin/mvn clean") {
-               throw new RuntimeException("build got failed due to clean failure")
-             }
-         }catch (e) {
-     currentBuild.result = "FAILED"
-     throw e}
-         }
+    stages {
+        stage('clean') {
+            steps {
+               sh "/usr/share/maven/bin/mvn clean"
+             } 
+         } 
+        stage('Build') {
+            steps {
+               sh "/usr/share/maven/bin/mvn compile"
+             } 
+         } 
 
-         stage("compile") {
-            try{
-         if ("sh /usr/share/maven/bin/mvn compile") {
-               throw new RuntimeException("build got failed due to test failure")
+        stage('Test') {
+            steps {
+               sh "/usr/share/maven/bin/mvn test"
              }
-         }catch (e) {
-     currentBuild.result = "FAILED"
-     throw e}
+         } 
+        stage('verify') {
+            steps {
+               sh "/usr/share/maven/bin/mvn verify"
+            }
+         }
      }
-         stage("test") {
-            try{
-             if ("sh /usr/share/maven/bin/mvn test") {
-               throw new RuntimeException("build got failed due to test failure")
-             }
-         }catch (e) {
-     currentBuild.result = "FAILED"
-     throw e}
-         stage("verify") {
-             try{
-                if ("sh /usr/share/maven/bin/mvn verify") {
-               throw new RuntimeException("build got failed due to verify failure")
-             }}catch (e) {
-     currentBuild.result = "FAILED"
-     throw e}
-         }
-
-        }
-
-    }
-    } 
+}
