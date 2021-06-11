@@ -37,14 +37,15 @@ public class UserLoginController extends HttpServlet {
                                        RequestDispatcher rd=request.getRequestDispatcher("/home.jsp");
 						
 						
-						rd.forward(request,response);
+						rd.include(request,response);
 						return;
 					}
+					else{
 					pout.write("Login fail...");
 					 
 					RequestDispatcher rd = request.getRequestDispatcher("/fail.jsp");
 					rd.forward(request,response);
-					
+					}
 					
 			  }
 	}

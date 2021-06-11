@@ -43,7 +43,7 @@ public class RegisterTest extends Mockito{
         when(response.getWriter()).thenReturn(writer);
         new UserRegisterController().doPost(request, response);
      
-        verify(rd).forward(request, response);
+        verify(rd).include(request, response);
         
         String result = stringWriter.getBuffer().toString().trim();
         assertEquals("Successfuly registered...", result);

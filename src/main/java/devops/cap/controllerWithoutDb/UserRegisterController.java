@@ -44,7 +44,7 @@ public class UserRegisterController extends HttpServlet{
 			    if(new UserService().doRegistration(portalNewUser)){   
 				    pout.write("Successfuly registered...");
 				    RequestDispatcher rd = request.getRequestDispatcher("/index.jsp");
-				    rd.forward(request, response);
+				    rd.include(request, response);
 			    }
 			    else
 			    {

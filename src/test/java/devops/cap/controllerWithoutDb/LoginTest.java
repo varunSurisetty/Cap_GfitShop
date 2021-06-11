@@ -38,7 +38,7 @@ public class LoginTest extends Mockito{
         when(response.getWriter()).thenReturn(writer);
         new UserLoginController().doPost(request, response);
 
-        verify(rd).forward(request, response);
+        verify(rd).include(request, response);
         
         String result = stringWriter.getBuffer().toString().trim();
         assertEquals("Login successfull...", result);
