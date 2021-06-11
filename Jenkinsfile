@@ -1,17 +1,3 @@
-pipeline {
-    agent any
-    stages {
-    
-        stage('clean') {
-            steps {
-               sh "/usr/share/maven/bin/mvn clean"
-             } 
-
-         }
-     }
- }
-
-
 pipeline 
 {
 
