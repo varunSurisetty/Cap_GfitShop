@@ -23,13 +23,8 @@ public class UserService {
 			 while(it.hasNext()){
 				 Map.Entry u = (Map.Entry)it.next();
 					
-				 if((u.getKey().equals(signup.getEmail())))
-				 {
+				 if(u.getKey().equals(signup.getEmail())){
 					 isValidUser=true;
-				 }
-				 if((u.getKey().equals(signup.getPassword())))
-				 {
-				 	isValidUser=true;
 				 }
 			 }	
 		}		
