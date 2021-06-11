@@ -1,7 +1,25 @@
 pipeline {
-agent any
-   try {
-      stages {
+    agent any
+    stages {
+    
+        stage('clean') {
+            steps {
+               sh "/usr/share/maven/bin/mvn clean"
+             } 
+
+         }
+     }
+ }
+
+
+pipeline 
+{
+
+   try 
+   {
+    agent any
+      stages 
+      {
          stage("clean") {
              if ("sh /usr/share/maven/bin/mvn clean") {
                throw new RuntimeException("build got failed due to clean failure")
@@ -24,9 +42,9 @@ agent any
              }
          }
 
-         }
+        }
 
-      } 
+    } 
    catch (e) {
      currentBuild.result = "FAILED"
      throw e
