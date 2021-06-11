@@ -10,7 +10,7 @@ public class UserServiceTest {
 
 	@Test
 	public void testIsAutherozied() {
-		User u1=new User("A","P","1234","a.p@devops.com");
+		User u1=new User("","","1234","a.p@devops.com");
 		assertEquals(true,new UserService().isAuthorized(u1));
 	}
 

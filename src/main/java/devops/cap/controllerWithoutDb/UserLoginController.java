@@ -34,17 +34,14 @@ public class UserLoginController extends HttpServlet {
 					PrintWriter pout= response.getWriter();
 					if (new UserService().isAuthorized(signUp)) {
 						pout.write("Login successfull...");
-                                       RequestDispatcher rd=request.getRequestDispatcher("/home.jsp");
-						
-						
+                        RequestDispatcher rd=request.getRequestDispatcher("/home.jsp");
 						rd.include(request,response);
-						return;
 					}
 					else{
 					pout.write("Login fail...");
 					 
 					RequestDispatcher rd = request.getRequestDispatcher("/fail.jsp");
-					rd.forward(request,response);
+					rd.include(request,response);
 					}
 					
 			  }
