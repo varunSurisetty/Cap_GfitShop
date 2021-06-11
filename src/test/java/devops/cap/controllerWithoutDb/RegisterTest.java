@@ -87,7 +87,7 @@ public class RegisterTest extends Mockito{
         verify(rd).include(request, response);
         
         String result = stringWriter.getBuffer().toString().trim();
-        assertEquals("<font color=red>Please fill all he fields</font>", result);
+        assertEquals("<font color=red>Please fill all the fields</font>", result);
 
         
     }

@@ -45,5 +45,23 @@ public class ChangePasswordTest extends Mockito{
         assertEquals("password updated for user", result);
       
     }
+
+    @Test
+    public void testChangePassword2() throws Exception {
+        when(request.getParameter("email")).thenReturn("a.p@devops.com");
+        when(request.getParameter("newpassword")).thenReturn("435321");
+        when(request.getParameter("confirmpassword")).thenReturn("6789");
+        when(request.getRequestDispatcher("index.jsp")).thenReturn(rd);            
+        StringWriter stringWriter = new StringWriter();
+        PrintWriter writer = new PrintWriter(stringWriter);
+        when(response.getWriter()).thenReturn(writer);
+        new UserPasswordController().doPost(request, response);
+     
+        verify(rd).include(request, response);
+        
+        String result = stringWriter.getBuffer().toString().trim();
+        assertEquals("password doesnt matches", result);
+      
+    }
     
 }
