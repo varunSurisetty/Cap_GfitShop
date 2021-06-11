@@ -39,10 +39,10 @@ public class ChangePasswordTest extends Mockito{
         when(response.getWriter()).thenReturn(writer);
         new UserPasswordController().doPost(request, response);
      
-        verify(rd).forward(request, response);
+        verify(rd).include(request, response);
         
         String result = stringWriter.getBuffer().toString().trim();
-        assertEquals("password updated", result);
+        assertEquals("password updated for user", result);
       
     }
     
