@@ -37,6 +37,13 @@ public class UserPasswordController extends HttpServlet {
 					out.write("password updated for user");
 					rd.include(request, response);
 				}
+				else
+				{
+				RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
+					PrintWriter pout= response.getWriter();
+					out.write("password doesnt atches");
+					rd.include(request, response);	
+				}
 
 			}
 
