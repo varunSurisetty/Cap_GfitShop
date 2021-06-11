@@ -22,7 +22,8 @@ public class CartService {
 			 
 			 while(it.hasNext()){
 				 Map.Entry u = (Map.Entry)it.next();
-				 if(u.getKey().equals(signup.getUserName())){
+				 if(u.getKey().equals(signup.getUserName()) && u.getKey().equals(signup.getPassword()))
+				 {
 					 isValidUser=true;
 				 }
 

@@ -24,6 +24,10 @@ public class UserDb {
 		userProfile.put(u1.getEmail(), u1);
 		userProfile.put(u2.getEmail(), u2);
 		userProfile.put(u3.getEmail(), u3);
+
+		userProfile.put(u1.getPassword(), u1);
+		userProfile.put(u2.getPassword(), u2);
+		userProfile.put(u3.getPassword(), u3);
 		
 	}
 	
