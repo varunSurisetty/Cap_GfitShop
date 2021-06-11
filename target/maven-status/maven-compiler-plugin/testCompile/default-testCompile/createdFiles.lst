@@ -1,8 +1,0 @@
-devops/cap/LoginFunctionalTest.class
-devops/cap/service/CartServiceTest.class
-devops/cap/controllerWithoutDb/LoginTest.class
-devops/cap/controllerWithoutDb/ChangePasswordTest.class
-devops/cap/controllerWithoutDb/RegisterTest.class
-devops/cap/service/UserServiceTest.class
-devops/cap/controllerWithoutDb/CheckoutTest.class
-devops/cap/IntegrationTest.class
