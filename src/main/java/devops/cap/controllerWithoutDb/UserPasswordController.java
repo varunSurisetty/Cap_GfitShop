@@ -26,6 +26,8 @@ public class UserPasswordController extends HttpServlet {
 		String email = request.getParameter("email");
 
 		
+
+		
 			if (newpass.equals(confirmpass)) {
 
 				User updatePwd = new User("", "", newpass, email);
