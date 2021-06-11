@@ -1,4 +1,5 @@
 pipeline {
+agent any
    try {
       stages {
          stage("clean") {
