@@ -22,5 +22,5 @@ pipeline {
                sh "/usr/share/maven/bin/mvn verify"
             }
          }
-     }
+       }
 }
