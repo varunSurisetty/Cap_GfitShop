@@ -86,6 +86,11 @@
       <td>Mini Muffin</td>
       <td>Rs.500</td>
     </tr>
+    <td scope="row">11</td>
+ <td><input type="checkbox" name="chk11"></td>
+      <td>Avengers Hulk</td>
+      <td>Rs.1500</td>
+    </tr>
   </tbody>
 </table>
 
