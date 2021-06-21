@@ -8,7 +8,7 @@ pipeline {
          }  
         stage('verify') {
             steps {
-               sh "/usr/share/maven/bin/mvn verify -Dv=${BUILD_NUMBER}"
+               sh "/usr/share/maven/bin/mvn verify"
             }
          }
        }
