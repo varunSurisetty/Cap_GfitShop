@@ -4,7 +4,7 @@
   <groupId>devops.cap</groupId>
   <artifactId>CAP</artifactId>
   <packaging>war</packaging>
-  <version>1.0.${v}-SNAPSHOT</version>
+  <version>1.0.${BUILD_NUMBER}-SNAPSHOT</version>
   <name>CAPUserMgmt Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <dependencies>
